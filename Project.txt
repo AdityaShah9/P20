@@ -1,0 +1,48 @@
+
+var cat,catImage1,catImage2,catImage4;
+var mouse,mouseImage1,mouseImage2,mouseImage3,mouseImage4;
+var garden,gardenImage;
+
+function preload(){
+   catImage1 = loadImage("images/cat1.png");
+   catImage2 = loadImage("images/cat2.png",images/cat3.png");
+   catImage4 = loadImage("images/cat4.png");
+   gardenImage = loadImage("images/garden.png");
+   mouseImage1 = loadImage("images/mouse1.png");
+   mouseImage2 = loadImage("images/mouse2.png");
+   mouseImage3 = loadImage("images/mouse3.png");
+   mouseImage4 = loadImage("images/mouse4.png");
+}
+
+function setup(){
+createCanvas(600,600);
+   cat = createSprite(100,50);
+   cat.addImage(catImage1);
+
+   mouse = createSprite(100,50);
+   mouse.addImage(mouseImage1);
+
+   garden = createSprite(200,50);
+   garden.addImage(gardenImage);
+}
+
+function draw(){
+background("white");
+
+  text(mouseX + ',' + mouseY, 10,45);
+
+drawSprites();
+}
+
+function keyPressed(){
+   if (keyCode === LEFT_ARROW){
+      cat.velocityX = -5;
+      cat.addAnimation("catRunning",catImage2);
+      cat.changeAnimation("catRunning");
+   }
+  }
+
+
+
+
+
